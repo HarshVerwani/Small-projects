@@ -1,0 +1,54 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ticket_bought , discount , bill , total_bill;
+    char ticket_type;
+    cout<<"how many ticket you want: ";
+    cin>>ticket_bought;
+     cout<<"which class of ticket you want(Bb,Ee,lL): ";
+    cin>>ticket_type;
+    
+    switch(ticket_type){
+        
+            case 'B':
+            case 'b':
+                   bill = 2500*ticket_bought;
+                   break;
+            case 'E':
+            case 'e':
+                   bill = 1500*ticket_bought;
+                    break;
+            case 'L':
+            case 'l':
+                   bill = 1000*ticket_bought;
+                    break;
+            default:
+            cout<<"invaid ticket type";
+        }
+    if(ticket_bought >= 1 && ticket_bought<=25){  
+        
+        if (ticket_bought < 10){
+             discount = bill*0;
+             cout<<"no discount"<<endl;
+        }
+        
+        else if(ticket_bought >= 10){
+            discount = bill*0.1;
+            cout<<"your discount is 10%: "<<discount<<endl;
+        }
+        
+        else if (ticket_bought >= 20){
+             discount = bill*0.2;
+            cout<<"your discount is 20%: "<<discount<<endl;
+        } 
+        
+        else 
+        cout<<"ticket bought must be less than or equal 25";
+        }
+         total_bill= bill-discount;
+         cout<<"your total bill is a: "<<total_bill;
+    
+    return 0;
+}

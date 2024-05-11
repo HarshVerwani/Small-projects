@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number , buzz_count=0 , fizz_count=0 , fizz_buzz_count=0;
+    
+    while(true){
+        
+    cout<<"enter the number: ";
+    cin>>number;
+    
+        if (number>0 && number<=100){
+            if (number % 3 == 0 && number % 5 == 0){
+            cout<<"FizzBuzz"<<endl;
+            fizz_buzz_count++;
+            }
+        
+        else if (number % 3 == 0){
+            cout<<"Fizz"<<endl;
+            fizz_count++;
+            }
+        
+        else if(number % 5 == 0){
+            cout<<"Buzz"<<endl;
+            buzz_count++;
+        }  
+    }
+    if (number %  3 != 0 && number % 5 != 0){
+        cout<<"your number is not divisble by 3 and 5"<<endl;
+        break;
+    }
+    
+}
+    cout<<fizz_buzz_count<<endl;
+    cout<<fizz_count<<endl;
+    cout<<buzz_count<<endl;
+    return 0;
+}
