@@ -1,0 +1,169 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+void position_finder1(int position, char tic_tac_table[3][3] ){
+    switch(position){
+        case 1:
+            tic_tac_table[0][0] = 'x' ;
+        break;
+        case 2:
+            tic_tac_table[0][1] = 'x' ;
+        break;
+        case 3:
+            tic_tac_table[0][2] = 'x' ;
+        break;
+        case 4:
+            tic_tac_table[1][0] = 'x' ;
+        break;
+        case 5:
+            tic_tac_table[1][1] = 'x' ;
+        break;
+        case 6:
+            tic_tac_table[1][2] = 'x' ;
+        break;
+        case 7:
+            tic_tac_table[2][0] = 'x' ;
+        break;
+        case 8:
+            tic_tac_table[2][1] = 'x' ;
+        break;
+        case 9:
+            tic_tac_table[2][2] = 'x' ;
+        break;
+    }
+}
+
+void position_finder2(int position , char tic_tac_table[3][3]){
+    switch(position){
+        case 1:
+            tic_tac_table[0][0] = '0' ;
+        break;
+        case 2:
+            tic_tac_table[0][1] = '0' ;
+        break;
+        case 3:
+            tic_tac_table[0][2] = '0' ;
+        break;
+        case 4:
+            tic_tac_table[1][0] = '0' ;
+        break;
+        case 5:
+            tic_tac_table[1][1] = '0' ;
+        break;
+        case 6:
+            tic_tac_table[1][2] = '0' ;
+        break;
+        case 7:
+            tic_tac_table[2][0] = '0' ;
+        break;
+        case 8:
+            tic_tac_table[2][1] = '0' ;
+        break;
+        case 9:
+            tic_tac_table[2][2] = '0' ;
+        break;
+    }
+}
+bool break_when_win(char tic_tac_table[3][3] , bool &flag ){
+    if (tic_tac_table[0][0] == 'x' && tic_tac_table[1][0] == 'x' && tic_tac_table[2][0] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][1] == 'x' && tic_tac_table[1][1] == 'x' && tic_tac_table[2][1] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][2] == 'x' && tic_tac_table[1][2] == 'x' && tic_tac_table[2][2] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][0] == 'x' && tic_tac_table[0][1] == 'x' && tic_tac_table[0][2] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[1][0] == 'x' && tic_tac_table[1][1] == 'x' && tic_tac_table[1][2] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[2][0] == 'x' && tic_tac_table[2][1] == 'x' && tic_tac_table[2][2] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][0] == 'x' && tic_tac_table[1][1] == 'x' && tic_tac_table[2][2] == 'x'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][2] == 'x' && tic_tac_table[1][1] == 'x' && tic_tac_table[2][0] == 'x'){
+            flag = true;
+    }
+    
+    
+    else if (tic_tac_table[0][0] == '0' && tic_tac_table[1][0] == '0' && tic_tac_table[2][0] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][1] == '0' && tic_tac_table[1][1] == '0' && tic_tac_table[2][1] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][2] == '0' && tic_tac_table[1][2] == '0' && tic_tac_table[2][2] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][0] == '0' && tic_tac_table[0][1] == '0' && tic_tac_table[0][2] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[1][0] == '0' && tic_tac_table[1][1] == '0' && tic_tac_table[1][2] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[2][0] == '0' && tic_tac_table[2][1] == '0' && tic_tac_table[2][2] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][0] == '0' && tic_tac_table[1][1] == '0' && tic_tac_table[2][2] == '0'){
+            flag = true;
+    }
+    else if(tic_tac_table[0][2] == '0' && tic_tac_table[1][1] == '0' && tic_tac_table[2][0] == '0'){
+            flag = true;
+    }
+    return flag ;
+}
+
+int main() {
+    char tic_tac_table[3][3] ;
+    int position ;
+    char c;
+    bool flag = false;
+    for(int i =0  ; i<3 ; i++){
+        for(int j = 0 ; j<3 ; j++){
+            tic_tac_table[i][j] = '-';
+        }
+    }
+    
+    for(int i = 1 ; i<=9 ; i++){
+        cout<<"enter the position: ";
+        cin>>position;
+        while(position < 0 || position > 9 ){
+            cout<<"You entered the wrong postion. Renter the position: ";
+            cin>>position;
+        }
+        cout<<"who is inputing tic or tac ";
+        cin>>c;
+        while( c != 't' && c != 'a'){
+            cout<<"You entered the wrong input. Renter the input: ";
+            cin>>c;
+        }
+        if (c=='t'){
+            position_finder1(position ,tic_tac_table );
+        }
+        else{
+            position_finder2(position ,tic_tac_table  );
+        }
+        break_when_win( tic_tac_table , flag );
+        if(flag == true){
+            break;
+        }
+        
+    }
+    if (flag == false ){
+        cout<<"the game is draw";
+    }
+    
+    for(int i = 0 ; i<3; i++){
+        for(int j=0 ; j<3 ;j++){
+            cout<<tic_tac_table[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
