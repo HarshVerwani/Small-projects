@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+	float MPG (float miles_driven , float gallon_of_gas_used){
+		float MPG=miles_driven/gallon_of_gas_used;
+		return MPG;
+	}
+	int main(){
+		float miles_driven , gallon_of_gas_used;
+		cout<<"enter the no miles_driven: ";
+	cin>>miles_driven;
+	cout<<"enter the gallon_of_gas_used: ";
+	cin>> gallon_of_gas_used;
+	cout<<MPG(miles_driven , gallon_of_gas_used);
+    return 0;
+}
+

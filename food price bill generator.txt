@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+	int total(int food_price){
+	float tip = food_price * 0.18;
+	cout<<tip<<endl;
+	float b = food_price + tip;
+	cout<<b<<endl;
+	float sales_tax =b * 0.07;
+	cout<<sales_tax<<endl;
+	float total = food_price + tip + sales_tax;
+	return total;
+	}
+	int main(){
+		int food_price;
+	cout<<"enter the food price: ";
+	cin>> food_price;
+	cout<<total(food_price);
+	}

@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int sqr_cube(){
+    int number , *ptr , sqr , cube;
+    while (true){
+        cout<<"enter the number ";
+        cin>>number;
+        ptr = &number;
+        if (number>100)
+        break;
+        
+            cout<<(*ptr)*(*ptr)<<endl;
+            cout<<(*ptr)*(*ptr)*(*ptr)<<endl;    
+        
+    }
+}    
+int main() {
+    sqr_cube();   
+    return 0;
+}

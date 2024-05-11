@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int installment(int no_of_installment , int amount_of_purchased ){
+	
+	float installment_charge = amount_of_purchased*0.05;
+	
+	cout<<installment_charge<<endl;
+	float total_amount = amount_of_purchased + installment_charge;
+	cout<<total_amount<<endl;
+	float each_installment = total_amount /  no_of_installment ;
+	return each_installment;
+}
+int main() {
+    int amount_of_purchased ,no_of_installment;
+    cout<<"enter the amount of the purchased ";
+    cin>>amount_of_purchased;
+    cout<<"enter the no_of_installment ";
+    cin>>no_of_installment;
+    cout<<installment(no_of_installment , amount_of_purchased);
+    return 0;
+}

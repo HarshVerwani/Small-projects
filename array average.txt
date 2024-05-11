@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+void avg(int arr[]){
+    int total =0;
+    double average =0;
+    for (int i = 0 ; i<10 ; i++){
+        total+=arr[i];
+    }
+    average = total/10;
+    cout<<average<<endl;
+    cout<<lowest <<endl <<highest;
+}
+
+
+int main (){
+    int arr[10] = {14, 9, 16, 12, 13, 14, 6, 11, 18, 10}; 
+    avg(arr);
+}
+
+
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void avg(int arr[]){
+    int total =0;
+    double average =0;
+    int lowest =arr[0] , highest = arr[0];
+    int second_highest = arr[0];
+    int lowest_index = -1 , highest_index = -1; 
+    for (int i = 0 ; i<10 ; i++){
+        total+=arr[i];
+        if (lowest > arr[i] ){
+            lowest = arr[i];
+            lowest_index = i;
+        }
+        if (highest < arr[i] ){
+            highest =arr[i];
+            highest_index =i;
+        }
+    }
+    for(int i = 1 ; i< 10 ; i++){
+        if (second_highest <arr[i] && arr[i]!= highest ){
+            second_highest = arr[i];
+        }
+    }
+    
+    average = total/10;
+    cout<<average<<endl;
+    cout<<lowest <<endl <<"lowest index is: "<<lowest_index<<endl;
+    cout<<highest <<endl <<"highest index is: "<<highest_index<<endl;
+    cout<<second_highest<<endl;
+}
+void bubble_sort(int arr[]){
+    int temp ;
+    for(int i = 0 ; i<10 ; i++){
+        for(int j = i+1 ; j<10 ; j++){
+            if (arr[i]>arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+void reverse_arr(int arr[]) {
+    int temp;
+    for (int i = 0; i < 5; i++) {
+        temp = arr[i];
+        arr[i] = arr[9 - i];
+        arr[9 - i] = temp;
+    }
+}
+
+
+
+int main (){
+    int arr[10] = {14, 9, 16, 12, 13, 14, 6, 11, 18, 10}; 
+    avg(arr);
+    int brr[10];
+    for(int i = 0 ; i<10 ;i++){
+        brr[i] = arr[i];
+    }
+    for(int i = 0 ; i<10 ;i++){
+        cout<<brr[i]<<" ";
+    }
+    cout<<endl;
+    reverse_arr( arr);
+    for(int i = 0 ; i<10 ;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    bubble_sort(arr);
+    for(int i = 0 ; i<10 ;i++){
+        cout<<arr[i]<<" ";
+    }
+    
+}
+
+
+
+#include<iostream>
+using namespace std;
+void pointer_arr(int *ptr ){
+    int temp =0;
+    for(int i = 0 ; i<5 ;i++){
+            temp = *(ptr+i);
+            *(ptr+i) =*(ptr+ 9-i);
+            *(ptr+ 9-i) =temp;
+    }
+}
+
+int main(){
+    int arr[10] = {14, 9, 16, 12, 13, 14, 6, 11, 18, 10};
+    int *ptr = arr;
+    pointer_arr(ptr);
+    for(int i =0 ; i<10 ; i++){
+        cout<<*(ptr+i)<<" ";
+    }
+}

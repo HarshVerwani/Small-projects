@@ -1,0 +1,47 @@
+Qno 1
+#include<iostream>
+using namespace std;
+void number(int n){
+    if (n==0){
+        return ;
+    }
+     number(n-1);
+     cout<<n<<" ";
+}
+int  main(){
+    int a;
+    cout<<"enter the number: ";
+    cin>>a;
+    number(a);
+}
+
+Qno 3
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  char source[] = "hello";
+  char destination[] = "world";
+
+  // memcpy used to copy the array
+  memcpy(source, destination , sizeof(destination) );
+
+  cout << destination<<endl;
+  
+   char quote[] = "Remember me when you look at the moon!";
+
+  // if string have full sentence when the first space come "strtok" will end the array and cout only first word before space
+  char* word = strtok(quote, " ");
+
+  cout <<  word;
+
+// it convert the character lowercase into uppercase
+char ch = toupper('a');
+  cout << ch;
+  return 0;
+}
+
+
+
+

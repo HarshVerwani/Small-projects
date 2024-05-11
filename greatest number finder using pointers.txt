@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+void greatest_finder(int a ,int b , int c ) {
+    int *ptr1 = &a ;
+    int *ptr2 = &b ;
+    int *ptr3 = &c ;
+    if (*ptr1 > *ptr2 && *ptr1 > *ptr3){
+      cout<<"n1 is greater than n2 and n3"<<endl;
+  } 
+  else if (*ptr2 > *ptr3 && *ptr2 > *ptr1){
+      cout<<"n2 is greater than n1 and n3"<<endl;
+  }
+  else {
+      cout<<"n3 is greater than n1 and n2"<<endl;
+  }
+  
+  if (*ptr1 < *ptr2 && *ptr1 < *ptr3){
+      cout<<"n1 is less than n2 and n3";
+  } 
+  else if (*ptr2 < *ptr3 && *ptr2 < *ptr1){
+      cout<<"n2 is less than n1 and n3";
+  }
+  else {
+      cout<<"n3 is less than n1 and n2";
+  }
+  return ;
+}
+int main() {
+  int n1, n2 , n3;
+  cout<<"enter the number 1: ";
+  cin>>n1;
+  cout<<"enter the number 2: ";
+  cin>>n2;
+  cout<<"enter the number 3: ";
+  cin>>n3;
+  greatest_finder(n1, n2 , n3);
+}

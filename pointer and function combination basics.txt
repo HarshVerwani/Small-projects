@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+void pointer ( int n,int *ptr){
+     ptr =&n;
+    cout<<*ptr;
+}
+
+int main() {
+    int n , *ptr;
+    cin>>n;
+    pointer (n,ptr);
+    return 0;
+}

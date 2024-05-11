@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int fun(int row ,int col){
+	int arr[row][col];
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			cout<<"enter the value of ["<<i<<"]["<<j<<"] : ";
+			cin>>arr[i][j];
+			
+		}
+		cout<<endl;
+	}
+	cout<<"the array one is: \n";
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			cout<<arr[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	int max = arr[0][0];	
+	for (int i=0;i<row;i++){
+		for(int j=0;j<col;j++){	
+			if (max < arr[i][j]){
+				max = arr[i][j];
+			}		
+		}
+	}
+	int min = arr[0][0];	
+	for (int i=0;i<row;i++){
+		for(int j=0;j<col;j++){	
+			if (min > arr[i][j]){
+				min = arr[i][j];
+			}		
+		}
+	}
+	cout<<"the max element in array is "<<max<<endl;
+	cout<<"the min element in array is "<<min;
+}
+int main(){
+	int rows;
+	int cols;
+	cout<<"enter the rows:";
+	cin>>rows;
+	cout<<"enter the cols:";
+	cin>>cols;
+	fun(rows,cols);
+}

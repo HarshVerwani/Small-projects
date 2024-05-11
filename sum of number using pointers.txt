@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int storer(){
+    int n , *storer , sum;
+    while (true){
+        cout<<"enter the number ";
+        cin>>n;
+        storer = &n;
+        if (n == 0)
+        break ;
+        sum = sum +*storer;    
+    }
+    
+    return sum ;
+}
+int main() {
+    cout<<storer();
+    return 0;
+}
